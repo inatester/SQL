@@ -156,18 +156,18 @@ insert into employee_salary (id, employee_id, salary_id) values
 	(default, 88, 82), 
 	(default, 89, 81);
 	
---7)Ñîçäàòü òàáëèöó roles
+--7) Создать таблицу roles
 create table roles (
 		id serial primary key,
 		role_name int not null unique
 	);
 select * from roles;
 
---8)Ïîìåíÿòü òèï ñòîëáà role_name ñ int íà varchar(30)
+--8) Поменять тип столбца role_name с int на varchar(30)
 alter table roles 
 alter column role_name type varchar (30);
 
---9)Íàïîëíèòü òàáëèöó 20 ñòðîêàìè
+--9) Наполнить таблицу 20 строками
 insert into roles (id, role_name) values
 	(default,'Junior Python developer'),
 	(default,'Middle Python developer'),
@@ -191,7 +191,7 @@ insert into roles (id, role_name) values
     (default,'Senior Automation QA engineer');
    
 
---10)Ñîçäàòü òàáëèöó roles_employee
+--10) Создать таблицу roles_employee
 create table roles_employee (
 	id serial primary key,
 	employee_id int not null unique,
@@ -203,7 +203,7 @@ create table roles_employee (
 );
 select * from roles_employee;
 
---11)Íàïîëíèòü òàáëèöó 40 ñòðîêàìè
+--11) Наполнить таблицу 40 строками
 insert into roles_employee (id, employee_id, role_id ) values
 	(default, 7, 2),
 	(default, 20, 4),
@@ -220,8 +220,8 @@ insert into roles_employee (id, employee_id, role_id ) values
 	(default, 13, 10), 
 	(default, 14, 11), 
 	(default, 15, 12),
-    (default, 16, 13),
-    (default, 17, 14),
+        (default, 16, 13),
+        (default, 17, 14),
 	(default, 18, 15),
 	(default, 19, 16),
 	(default, 1, 17),
