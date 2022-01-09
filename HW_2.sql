@@ -1,11 +1,11 @@
---1) Создать таблицу employees
+--1) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employees
  create table employees (
  	id serial primary key,
  	employee_name varchar (50) unique not null
 );
 select * from employees;
 
---2)Наполнить таблицу строками
+--2) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ 70 СЃС‚СЂРѕРєР°РјРё
 insert into employees (id, employee_name) values 
 (default, 'Jeff_Bezos'),
 (default, 'Elon_Musk'),
@@ -78,14 +78,14 @@ insert into employees (id, employee_name) values
 (default, 'Gina_Rinehart'),
 (default, 'Rupert_Murdoch');
 
---3)Создать таблицу salary
+--3) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ salary
 create table salary (
 	id serial primary key,
 	monthly_salary int not null
 	);
 select * from salary;
 
---4)Наполнить таблицу salary 15 строками
+--4) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ salary 15 СЃС‚СЂРѕРєР°РјРё
  insert into salary (id, monthly_salary) values 
  	    (default, 1000),
         (default,1100),
@@ -105,7 +105,7 @@ select * from salary;
         (default,2500);
        
 
---5)Создать таблицу employee_salary
+--5) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ employee_salary
 create table employee_salary (
 		id serial primary key,
 		employee_id int not null unique,
@@ -113,7 +113,7 @@ create table employee_salary (
 	);
 select * from employee_salary;
 
---6)Наполнить таблицу 40 строками, в 10 строк из 40 вставить несуществующий employee_id
+--6) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ 40 СЃС‚СЂРѕРєР°РјРё, Р° РІ 10 СЃС‚СЂРѕРє РёР· 40 РІСЃС‚Р°РІРёС‚СЊ РЅРµСЃСѓС‰РµСЃС‚РІСѓСЋС‰РёРµ  employee_id
 insert into employee_salary (id, employee_id, salary_id) values 
 	(default, 3, 7),
 	(default, 1, 4),
@@ -130,8 +130,8 @@ insert into employee_salary (id, employee_id, salary_id) values
 	(default, 6, 4), 
 	(default, 8, 2), 
 	(default, 17, 1),
-    (default, 35, 8),
-    (default, 41, 54),
+        (default, 35, 8),
+        (default, 41, 54),
 	(default, 37, 25),
 	(default, 21, 10),
 	(default, 47, 4),
@@ -146,8 +146,8 @@ insert into employee_salary (id, employee_id, salary_id) values
 	(default, 33, 12), 
 	(default, 44, 30), 
 	(default, 80, 90),
-    (default, 81, 89),
-    (default, 82, 88),
+        (default, 81, 89),
+        (default, 82, 88),
 	(default, 83, 87),
 	(default, 84, 86),
 	(default, 85, 85),
@@ -156,18 +156,18 @@ insert into employee_salary (id, employee_id, salary_id) values
 	(default, 88, 82), 
 	(default, 89, 81);
 	
---7)Создать таблицу roles
+--7) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles
 create table roles (
 		id serial primary key,
 		role_name int not null unique
 	);
 select * from roles;
 
---8)Поменять тип столба role_name с int на varchar(30)
+--8) РџРѕРјРµРЅСЏС‚СЊ С‚РёРї СЃС‚РѕР»Р±С†Р° role_name СЃ int РЅР° varchar(30)
 alter table roles 
 alter column role_name type varchar (30);
 
---9)Наполнить таблицу 20 строками
+--9) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ 20 СЃС‚СЂРѕРєР°РјРё
 insert into roles (id, role_name) values
 	(default,'Junior Python developer'),
 	(default,'Middle Python developer'),
@@ -191,7 +191,7 @@ insert into roles (id, role_name) values
     (default,'Senior Automation QA engineer');
    
 
---10)Создать таблицу roles_employee
+--10) РЎРѕР·РґР°С‚СЊ С‚Р°Р±Р»РёС†Сѓ roles_employee
 create table roles_employee (
 	id serial primary key,
 	employee_id int not null unique,
@@ -203,7 +203,7 @@ create table roles_employee (
 );
 select * from roles_employee;
 
---11)Наполнить таблицу 40 строками
+--11) РќР°РїРѕР»РЅРёС‚СЊ С‚Р°Р±Р»РёС†Сѓ 40 СЃС‚СЂРѕРєР°РјРё
 insert into roles_employee (id, employee_id, role_id ) values
 	(default, 7, 2),
 	(default, 20, 4),
@@ -220,8 +220,8 @@ insert into roles_employee (id, employee_id, role_id ) values
 	(default, 13, 10), 
 	(default, 14, 11), 
 	(default, 15, 12),
-    (default, 16, 13),
-    (default, 17, 14),
+        (default, 16, 13),
+        (default, 17, 14),
 	(default, 18, 15),
 	(default, 19, 16),
 	(default, 1, 17),
